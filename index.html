@@ -2,35 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example!</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grailed: Online Marketplace to Buy Fashion</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.grailed.com/images/favicon@4x.png" sizes="48x48" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./script.js" defer></script>
 </head>
 
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="./">
-                   <img src="data:image/png;base64,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" data-deferred="1" class="rg_i Q4LuWd" jsname="Q4LuWd" width="180" height="180" alt="Grailed" data-atf="true" data-iml="918.8000000007451">>
+                <a class="menuLink homeMenuLink" href="./">
+                   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEX///8AAABtbW3m5uZlZWVqampzc3PV1dUmJib5+fl2dnYWFhZKSkqTk5OysrIsLCyDg4OcnJwPDw9UVFS9vb1FRUVcXFyqqqra2to6OjogICCQkJA1NTUaGhpCQkJWVlbNzc3Gxsbr6+t+fn63t7ejo6Py8vKZmZkwMDA2UrEOAAAGJklEQVR4nO2Y25qqOBBGm7MgZxBRUEDk8P5POBVIABV73Li/uZl/3bQJhGaRpFLJzw8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgP8vyt3RVT1zjUVVukQxXxu1qcFIlXa6aN6UVNS1N4UVWGPl1prsHtNs2xtV07ONCXZ9Jk1FG+V2a8dm3+P20oR/45XSM1r81Iy3uiROKd7DyK5DXagdSzdTTyH7vbPlLjboG5lKGTdZrUan8/LBYX+IElVVkyQ65NOVS38ttNpp4jK9falp9NID3Vi9f1GUwgdHRbxK5N/FZ0kdm0lJnu4ad0e2d1J49k6RFXBDIz52vpzY+Tmcnrr3rlGiybouq0l0zXeX8VK43+WHSLX8wK1Wh9DHHF9E1HeGkuQsGjrC+6Q36a+Gxa+GF2aovhhKQ1M7kWvnSP3YbhZ0Vzz0t4bScW45jScvcSrzN8MP+lAYHhaGk2I2DNWNgumqR/zWcD99y3Kus2sxTP+uobQ/90zR/6YXF3PwMv/MzXeG0l20tOa6k9wYf2R4yBf/TLrkdqFqsqwNo/S8/Mc0F6+RqrO5aGybi/fpWUdqf5NFqZoNh+emurhi8Zbt4h13SRabf2BIUTOh4FJnHfXNsDaU1b1xfNaLRRHZV07e9/nparM7m/vGcXoSL8lbZ7yoz4b8TqGo8nK8/NIHy1U+N9RVxhhBxo4xb2nlBpkla5qqsbBq1bVl6VoSMQoKqN3GTpxmYcUrzDzcE2H0Yhg/GSbLodurnbHBsJkMFYMMfTKkC2To+36W+X6tJSPbZ6IIpOephlKOgRdDMZ79sSgWwzGgniM/bp8My3v2i2GSsI5hnUiJS3ujYfpgmDld52S+pQ13qtuHqRh6zsq1J0PRZ+VYDMaSVwx/wqt+TD83TOzTbh+GNFwutKoXak1GDhOaDJ0uCIIuq+Whu1XNyti6vyG3ifhr31euCcOqJGKbl2x+lZe1bAztXtINmdtHhg+rBUvOZFIkFoZd0DRN4PhsYrIaa2s0PfB/w2O9uus55+Ob1WIMKNMEjt1RdW+PmdsfG4bn/pCsGDbMkLp7NNS+NkwfOoYRrBrmYib4Y/l6K/mvXB4yt79q2MyGVHP8G30YzS7NmmEh2pl8Mcx+FB5jaUms2o8ND4+jVPs3w+2jVCi5nxlKHh+k1dT3pjF2fHio2ZL4aR8OkYYCzRBpaAw+RxoKNE0QOPVQISLNFkORedVjcTFK1w1FWqqNpSv9vPEkIdcCY9Vwt5LTsOVC5W/Ndrnt83pIi0VAy0WtTbG02RZLp40FF7YjITkbsrjtTL07fAuTF/La0lU+0s9FRkviR4YPOc3wyV5W/Iw6lYatzpbDr9bDKaeZFkSxW2ye1sOal3bmz/qOK7xaR+WNIe0Pq+c+pLd+a2jVPqO2WJpaFEmij8nBlt1FLl6Q794V4dU8Zt5Ttw1h9yStQJlbuT4P80h27jTGWOqyNKR+qdLhJGYepRrbZFDw1JhsYtv2wbb5Rn/b5mLuDYvihDnv95/7UEw9qZwztkcutCS2r4ZPN/W0F3w4jpEedk+Ffc29Szhx2XnfbhCfX+GtYceL7rwBeYQdZii/G45HL6PhvM0Nd6fBUBv3hxRl50tjVjfmbBvPakppnRfDeYKKrxIeaAt3ynuPL467xCmNbLsh3wEvTzHEBphmobFpFjKCDw3F7smZPkrGqk3TNPgjKHOLqy/68MWQbu+/F3xR3AfrhgYv+tOGRJyvtfF4Rirluutm0R8b7t8YDkM0+m6IjlQPZyapwg3FK/BH33hRM7m6J9qbJU8czknT+OOCupPd0s20w8PJ75CFXu2Cwkm/zCfOTFtl05AM+0XGerWTb45oFsxn3h096uR53uX4c9p5jL3wsMfy6bgf/l6Cqblyz6niYBe16zZ1RCHeVp0qrY6ZNcR7AcX9RNNpravZ+YQtiBJKO4fENBuuFBFVsRuzjpYTg1aZL/UG2sp13Tj99xsBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAID/mH8AOcC4sCdvcx0AAAAASUVORK5CYII=" data-deferred="1" class="rg_i Q4LuWd" jsname="Q4LuWd" width="180" height="180" alt="Grailed" data-atf="true" data-iml="918.8000000007451">
                 </a>
             </div>
+            <div class="search">
+                <label class="magnifyingGlassContainer">
+                    <svg height="15px" width="15px" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.6762 14.1493C11.3618 15.1535 9.71933 15.75 7.9375 15.75C3.62278 15.75 0.125 12.2522 0.125 7.9375C0.125 3.62278 3.62278 0.125 7.9375 0.125C12.2522 0.125 15.75 3.62278 15.75 7.9375C15.75 9.71928 15.1535 11.3617 14.1494 12.6761L18.57 17.0967L17.0968 18.5699L12.6762 14.1493ZM13.6667 7.9375C13.6667 11.1016 11.1016 13.6667 7.9375 13.6667C4.77337 13.6667 2.20833 11.1016 2.20833 7.9375C2.20833 4.77337 4.77337 2.20833 7.9375 2.20833C11.1016 2.20833 13.6667 4.77337 13.6667 7.9375Z" fill="black"></path></svg>
+                </label>
+                <form id="searchForm" action="submit">
+                    <input class="searchInput" placeholder="Search" type="search" />
+                    <button class="buttonLook" type="submit">SEARCH</button>
+                </form>
+            </div>
             <ul class="menu">
-                <li>
-                    <a href="#">Sell</a>
+                <li class="menuLinkContainer sellLink buttonLook">
+                    <a class="menuLink" href="#">Sell</a>
                 </li>
-                <li>
-                    <a href="#">Shop</a>
+                <li class="menuLinkContainer shopLink buttonLook">
+                    <a class="menuLink" href="#">Shop</a>
                 </li>
-                <li>
-                    <a href="#">Read</a>
+                <li class="menuLinkContainer readLink buttonLook">
+                    <a class="menuLink" href="#">Read</a>
                 </li>
-                <li>
-                    <a href="#">Login</a>
+                <li class="menuLinkContainer loginLink buttonLook">
+                    <a class="menuLink" href="#">Login</a>
                 </li>
-                <li>
-                    <a href="#">Sign Up</a>
+                <li class="menuLinkContainer signupLink buttonLook">
+                    <a class="menuLink" href="#">Sign Up</a>
                 </li>
             </ul>
         </nav>
