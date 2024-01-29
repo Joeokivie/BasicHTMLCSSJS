@@ -1,5 +1,10 @@
 console.log(`Hello from Grailed`);
 
+let yearElement = document.querySelector(`.year`);
+if (yearElement) {
+    yearElement.innerHTML = new Date().getFullYear();
+}
+
 // let users = [
 //     {
 //         id: 1,
