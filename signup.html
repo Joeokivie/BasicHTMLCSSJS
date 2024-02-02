@@ -22,9 +22,9 @@
                 <label class="magnifyingGlassContainer">
                     <svg height="15px" width="15px" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.6762 14.1493C11.3618 15.1535 9.71933 15.75 7.9375 15.75C3.62278 15.75 0.125 12.2522 0.125 7.9375C0.125 3.62278 3.62278 0.125 7.9375 0.125C12.2522 0.125 15.75 3.62278 15.75 7.9375C15.75 9.71928 15.1535 11.3617 14.1494 12.6761L18.57 17.0967L17.0968 18.5699L12.6762 14.1493ZM13.6667 7.9375C13.6667 11.1016 11.1016 13.6667 7.9375 13.6667C4.77337 13.6667 2.20833 11.1016 2.20833 7.9375C2.20833 4.77337 4.77337 2.20833 7.9375 2.20833C11.1016 2.20833 13.6667 4.77337 13.6667 7.9375Z" fill="black"></path></svg>
                 </label>
-                <form id="searchForm" action="submit">
-                    <input class="searchInput" placeholder="Search" type="search" />
-                    <button class="buttonLook" type="submit">SEARCH</button>
+                <form id="searchForm" class="searchForm" action="submit">
+                    <input name="search" class="searchInput" placeholder="Search" type="search" />
+                    <button class="searchFormSubmitButton buttonLook" type="submit">SEARCH</button>
                 </form>
             </div>
             <ul class="menu">
@@ -48,7 +48,16 @@
     </header>
 
     <main class="content">
-        <section class="bannerSection">Sign Up Page</section>
+        <section class="signUpSection bannerSection">
+            <h2>Sign Up</h2>
+            <form class="signUpForm authForm" action="submit">
+                <fieldset class="fieldGroup">
+                    <input class="emailField formField" name="email" type="email" placeholder="Enter Email..." required />
+                    <input class="passwordField formField" name="password" type="password" placeholder="Enter Password..." required />
+                </fieldset>
+                <button class="formSubmitButton buttonLook formField" type="submit">Register</button>
+            </form>
+        </section>
         <section>Top Content Section</section>
         <section class="imageGallerySection">Image Gallery Section</section>
         <section>Contact Form Section</section>

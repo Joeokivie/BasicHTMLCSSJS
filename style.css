@@ -111,12 +111,32 @@ nav {
     text-transform: uppercase;
 }
 
+h1 {
+    font-size: 35px;
+}
+
 a {
     color: black;
     text-decoration: none;
     transition: 150ms ease-in-out;
     border-bottom: 0px solid black;
+}
 
+.menuLinkContainer {
+    padding: 0;
+    min-height: 32px;
+}
+
+.menuLink {
+    height: 100%;
+    display: flex;
+    padding: 0px 13px;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentLink {
+    color: #3aadad;
 }
 
 li:hover a {
@@ -146,6 +166,59 @@ section {
 
 .bannerSection {
     background: #aef5f5;
+}
+
+.usersStatuses {
+    flex-direction: column;
+}
+
+.signUpSection {
+    flex-direction: column;
+}
+
+.authForm {
+    display: flex;
+    grid-gap: 10px;
+    min-width: 350px;
+    flex-direction: column;
+}
+
+.formField {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid silver;
+}
+
+.formSubmitButton {
+    color: white;
+    background: black;
+    border: 1px solid black;
+}
+
+.formSubmitButton:hover {
+    background: white;
+    color: black;
+}
+
+fieldset {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 5px;
+}
+
+.statuses {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 5px;
+    text-align: center;
 }
 
 .imageGallerySection {
