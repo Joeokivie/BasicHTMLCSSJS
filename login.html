@@ -37,10 +37,13 @@
                 <li class="menuLinkContainer readLink buttonLook">
                     <a class="menuLink" href="./read.html">Read</a>
                 </li>
-                <li class="menuLinkContainer loginLink buttonLook">
+                <li class="menuLinkContainer logoutLink blackButtonLink authLink signedInLink buttonLook">
+                    <a class="menuLink logOutButtonLink" role="button" href="undefined" rel="noreferrer">Logout</a>
+                </li>
+                <li class="menuLinkContainer loginLink authLink signedOutLink buttonLook">
                     <a class="menuLink" href="./login.html">Login</a>
                 </li>
-                <li class="menuLinkContainer signupLink buttonLook">
+                <li class="menuLinkContainer signupLink blackButtonLink authLink signedOutLink buttonLook">
                     <a class="menuLink" href="./signup.html">Sign Up</a>
                 </li>
             </ul>
@@ -48,7 +51,19 @@
     </header>
 
     <main class="content">
-        <section class="bannerSection">Log In Page</section>
+        <section class="logInSection authSection bannerSection">
+            <h2>Log In, <span class="userscount logInUsersCount"></span> User(s)</h2>
+            <form class="logInForm authForm" action="submit">
+                <fieldset class="fieldGroup">
+                    <input class="emailField formField" name="email" type="email" placeholder="Enter Email..." required />
+                    <input class="passwordField formField" name="password" type="password" placeholder="Enter Password..." required />
+                </fieldset>
+                <div class="errorMessage logInErrorMessage">
+                    <!-- Dynamically filled with JavaScript -->
+                </div>
+                <button class="formSubmitButton buttonLook formField" type="submit">Log In</button>
+            </form>
+        </section>
         <section>Top Content Section</section>
         <section class="imageGallerySection">Image Gallery Section</section>
         <section>Contact Form Section</section>

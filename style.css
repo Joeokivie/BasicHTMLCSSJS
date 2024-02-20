@@ -70,15 +70,15 @@ nav {
     border-color: white;
 }
 
-.signupLink {
+.blackButtonLink {
     background: black;
 }
 
-.signupLink:hover {
+.blackButtonLink:hover {
     background: rgba(0, 0, 0, 0.25);
 }
 
-.signupLink a {
+.blackButtonLink a {
     color: white;
 }
 
@@ -172,8 +172,20 @@ section {
     flex-direction: column;
 }
 
-.signUpSection {
+.authSection {
     flex-direction: column;
+}
+
+.errorMessage {
+    display: none;
+    color: red;
+    font-size: 11px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hasErrors {
+    display: flex;
 }
 
 .authForm {

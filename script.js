@@ -14,15 +14,20 @@ class User {
     }
 }
 
+let logInForm = document.querySelector(`.logInForm`);
 let searchForm = document.querySelector(`.searchForm`);
 let signUpForm = document.querySelector(`.signUpForm`);
 let usersCountElements = document.querySelectorAll(`.userscount`);
 let userStatusesSection = document.querySelector(`.usersStatuses`);
+let logInErrorMessage = document.querySelector(`.logInErrorMessage`);
 
 // Ternary Statements are just one line if else statements
 let users = localStorage.getItem(`users`) ? JSON.parse(localStorage.getItem(`users`)) : [];
 
-console.log(`Initial User(s)`, users);
+let currentLoggedInUser = localStorage.getItem(`user`) ? JSON.parse(localStorage.getItem(`user`)) : null;
+
+// console.log(`Initial User(s)`, users);
+// console.log(`Current Logged In User`, currentLoggedInUser);
 
 if (searchForm) {
     searchForm.addEventListener(`submit`, (onFormSubmitEvent) => {
@@ -56,7 +61,50 @@ if (signUpForm) {
         users.push(newUser);
         localStorage.setItem(`users`, JSON.stringify(users));
         console.log(`Updated User(s)`, users);
-        window.location.reload();
+        // window.location.reload();
+        window.location.href = `./login.html`;
+    })
+}
+
+const showErrorMessage = (elementToShowErrorIn, messageToShowToUser) => {
+    elementToShowErrorIn.innerHTML = messageToShowToUser;
+    if (!elementToShowErrorIn.classList.contains(`hasErrors`)) {
+        elementToShowErrorIn.classList.add(`hasErrors`);
+    }
+}
+
+if (logInForm) {
+    logInForm.addEventListener(`submit`, (onFormSubmitEvent) => {
+        onFormSubmitEvent.preventDefault();
+
+        // Log In Logic
+        let form = onFormSubmitEvent.target;
+        let { email: emailField, password: passwordField } = form;
+        let email = emailField.value;
+        let password = passwordField.value;
+
+        let usersThatMatchesEmail = users.filter(usr => usr.email.toLowerCase() == email.toLowerCase());
+
+        if (usersThatMatchesEmail.length > 0) {
+            // We have users that match
+            if (logInErrorMessage.classList.contains(`hasErrors`)) {
+                logInErrorMessage.classList.remove(`hasErrors`);
+            }
+
+            if (usersThatMatchesEmail[0].password == password) {
+                let userThatMatchesEmailAndPassword = usersThatMatchesEmail[0];
+                form.reset();
+                console.log(`Correct Password, Log User In`, userThatMatchesEmailAndPassword);
+                localStorage.setItem(`user`, JSON.stringify(userThatMatchesEmailAndPassword));
+                // window.location.reload();
+                window.location.href = `./`;
+            } else {
+                showErrorMessage(logInErrorMessage, `Incorrect Email or Password`);
+            }
+        } else {
+            // We dont have users that match
+            showErrorMessage(logInErrorMessage, `No User(s) Match`);
+        }
     })
 }
 
@@ -78,6 +126,32 @@ if (users.length > 0) {
     setUserCounts();
     if (userStatusesSection) {
         userStatusesSection.innerHTML = `<h2>${users.length} User(s), go to <a class="contentLink" href="./signup.html">Sign Up</h2>`;
+    }
+}
+
+if (currentLoggedInUser != null) {
+    console.log(`User is Logged In As`, currentLoggedInUser);
+    let signOutLinks = document.querySelectorAll(`.signedOutLink`);
+    if (signOutLinks) {
+        if (signOutLinks.length > 0) {
+            signOutLinks.forEach(signoutLink => signoutLink.remove());
+        }
+    }
+    let logOutButtonLink = document.querySelector(`.logOutButtonLink`);
+    let username = currentLoggedInUser.email.split(`@`)[0];
+    logOutButtonLink.innerHTML = `${username}, Log Out?`;
+
+    logOutButtonLink.addEventListener(`click`, onClickEvent => {
+        localStorage.removeItem(`user`);
+        window.location.href = `./`;
+    })
+} else {
+    console.log(`No Current Logged In User`);
+    let signInLinks = document.querySelectorAll(`.signedInLink`);
+    if (signInLinks) {
+        if (signInLinks.length > 0) {
+            signInLinks.forEach(signInLink => signInLink.remove());
+        }
     }
 }
 
