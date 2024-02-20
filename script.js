@@ -16,7 +16,7 @@ class User {
 
 let searchForm = document.querySelector(`.searchForm`);
 let signUpForm = document.querySelector(`.signUpForm`);
-let userscount = document.querySelector(`.userscount`);
+let usersCountElements = document.querySelectorAll(`.userscount`);
 let userStatusesSection = document.querySelector(`.usersStatuses`);
 
 // Ternary Statements are just one line if else statements
@@ -39,6 +39,7 @@ if (signUpForm) {
     signUpForm.addEventListener(`submit`, (onFormSubmitEvent) => {
         onFormSubmitEvent.preventDefault();
 
+        // Sign Up Logic
         let form = onFormSubmitEvent.target;
         let { email: emailField, password: passwordField } = form;
         let email = emailField.value;
@@ -51,18 +52,30 @@ if (signUpForm) {
             password
         )
 
+        form.reset();
         users.push(newUser);
         localStorage.setItem(`users`, JSON.stringify(users));
         console.log(`Updated User(s)`, users);
+        window.location.reload();
     })
 }
 
-if (users.length > 0) {
-    if (userscount) {
-        userscount.innerHTML = users.length;
+const setUserCounts = () => {
+    if (usersCountElements) {
+        if (usersCountElements.length > 0) {
+            // Any logic in here will run for each item in the array
+            usersCountElements.forEach((usercountelem, usercountelemIndex) => {
+                usercountelem.innerHTML = users.length;
+            })
+        }
     }
+}
+
+if (users.length > 0) {
+    setUserCounts();
 } else {
     // We have no user(s)
+    setUserCounts();
     if (userStatusesSection) {
         userStatusesSection.innerHTML = `<h2>${users.length} User(s), go to <a class="contentLink" href="./signup.html">Sign Up</h2>`;
     }
